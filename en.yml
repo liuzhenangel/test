@@ -1,0 +1,654 @@
+en:
+  language_environment:
+    plain_text:
+      description: |
+        ## Text Mode
+        Here is a general "whiteboard" communication environment, where you can discuss some non-technical issues with technical experts.
+
+        The purpose of providing text mode is:
+
+        1. For better communication and understanding. Many people's pronunciation of technical terms is inaccurate, so we can write down the content  to avoid this problem.
+        2. Interview process so that you can review the interview process and assess the ability of candidates accurately.
+
+        We support Markdown syntax highlighting
+
+        - **Bold** - `**Bold**`
+        - *Tilt* - `*Tilt*`
+        - ~~Strikethrough~~ - `~~Strikethrough~~`
+        - `Code Mark` - `` `Code Mark` ``
+        - [Hyperlink](http://github.com) - `[Hyperlink](http://github.com)`
+
+        ### Mathematical formula
+        There are two kinds of mathematical formulas in LaTex: **in-line formulas and independent formulas. In-line formulas are placed in the text and mixed with other texts. Independent formulas form a separate line. A single `$` symbol represents in-line formulas, and two `$` symbols represent independent formulas.**
+
+        > In ShowMeBug, all mathematical formulas need to be wrapped with three ``` or a single \` and added with a `$` symbol, otherwise they cannot be rendered.
+
+        **The independent formula can be expressed as follows:**
+        > Input:
+        >
+        > Independent formula: \`\$\$ x^{y^z}=(1+{\\rm e}^x)^{-2xy^w} \$\$\`
+
+        > Output:
+        >
+        > Independent formula: `$$ x^{y^z}=(1+{\rm e}^x)^{-2xy^w} $$`
+
+        **The in-line formula can be expressed as follows:**
+
+        > Input:
+        >
+        > In-line formula: \`$ x^{y^z}=(1+{\\rm e}^x)^{-2xy^w} \$\`
+
+        > Output:
+        >
+        > In-line formula: `$ x^{y^z}=(1+{\rm e}^x)^{-2xy^w} $`
+      written_pad_description: >
+        ## MarkDown Description
+
+        We support Markdown syntax highlighting
+
+        - **Bold** - `**Bold**`
+        - *Tilt* - `*Tilt*`
+        - ~~Strikethrough~~ - `~~Strikethrough~~`
+        - `Code Mark` - `` `Code Mark` ``
+        - [Hyperlink](http://github.com) - `[Hyperlink](http://github.com)`
+
+        ### Mathematical formula
+        There are two kinds of mathematical formulas in LaTex: **in-line formulas and independent formulas. In-line formulas are placed in the text and mixed with other texts. Independent formulas form a separate line. A single `$` symbol represents in-line formulas, and two `$` symbols represent independent formulas.**
+
+        > In ShowMeBug, all mathematical formulas need to be wrapped with three ``` or a single \` and added with a `$` symbol, otherwise they cannot be rendered.
+
+        **The independent formula can be expressed as follows:**
+        > Input:
+        >
+        > Independent formula: \`\$\$ x^{y^z}=(1+{\\rm e}^x)^{-2xy^w} \$\$\`
+
+        > Output:
+        >
+        > Independent formula: `$$ x^{y^z}=(1+{\rm e}^x)^{-2xy^w} $$`
+
+        **The in-line formula can be expressed as follows:**
+
+        > Input:
+        >
+        > In-line formula: \`$ x^{y^z}=(1+{\\rm e}^x)^{-2xy^w} \$\`
+
+        > Output:
+        >
+        > In-line formula: `$ x^{y^z}=(1+{\rm e}^x)^{-2xy^w} $`
+      default_snippet: '## Please enter below (Markdown, insert formula and LaTex mathematical formula are supported, click the button "Environment Description" above to view details)'
+    board:
+      description: |
+        # Architecture Drawing Instructions
+
+        ## Operation
+        Drag the object you want to draw directly from the toolbar on the left to the whiteboard. You can also rotate and zoom the object.
+
+        ## Establish relationship through connection
+        Click an object, select one of the points of the frame and hold down the left mouse button and drag it to the frame of another object to complete the connection. Most objects support connections.
+
+        ## Questions
+        You can fill in the content of your question on the sticky note by inserting the "sticky note" in the left side tool bar
+    bash:
+      description: |
+        # Bash execution environment
+        We use the Bash 4.4 runtime environment, and your Bash code will be sent to the environment provided by ShowMeBug.
+
+        A simple example:
+
+        ```bash
+        echo "hello world"
+        ```
+
+        Example of function call:
+
+        ```bash
+        function func(){
+          echo "hello world"
+        }
+        func
+        ```
+    cclang:
+      description: |
+        # GCC execution environment
+        We use the latest GCC 9.3 environment, and your C++ code will be transferred to the environment provided by ShowMeBug.
+
+        We have supported the testing framework GTest (Google Test). When writing test questions, you can use GTest to write test cases to realize automatic judgment.
+
+        You must define a `main()` function so that we can run the results.
+
+        A simple example:
+
+        ```c++
+        #include <iostream>
+        using namespace std;
+
+        int main()
+        {
+          cout << "Hello, World!" << endl;
+          return 0;
+        }
+        ```
+
+        You can use the following library:
+
+        ```c++
+        #include <iostream>
+        #include <fstream>
+        #include <vector>
+        #include <cstdarg>
+        #include <string>
+        #include <cstdio>
+        #include <cctype>
+        #include <cmath>
+        #include <ctime>
+        #include <queue>
+        #include <map>
+        #include <set>
+        #include <algorithm>
+        #include <climits>
+        #include <sstream>
+        #include <numeric>
+        #include <iterator>
+        #include <iomanip>
+        #include <utility>
+        #include <stack>
+        #include <functional>
+        #include <deque>
+        #include <complex>
+        #include <bitset>
+        #include <list>
+        #include <array>
+        #include <regex>
+        #include <random>
+        #include <unordered_set>
+        #include <unordered_map>
+        #include <openssl/ssl.h>
+        #include <openssl/rsa.h>
+        #include <openssl/x509.h>
+        #include <openssl/evp.h>
+        #include <openssl/sha.h>
+        #include <jsoncpp/json/json.h>
+        #include <atomic>
+        #include <thread>
+        #include <mutex>
+        #include <condition_variable>
+        #include <future>
+
+        In addition, we also support boost libraries, such as using #include <boost/any.hpp>
+        ```
+      default_snippet: |
+        // You must define a `main()` function entry.
+        #include <iostream>
+        using namespace std;
+
+        int main()
+        {
+          cout << "Hello, World!" << endl;
+          return 0;
+        }
+    clang:
+      description: |
+        # GCC execution environment
+        We use the latest GCC 9.3 environment, and your C code will be transferred to the environment provided by ShowMeBug.
+
+        We have supported the testing framework Unity (throwtheswitch.org \/ unity). When writing test questions, you can use Unity to write test cases to realize automatic judgment.
+
+        You must define a `main()` function so that we can run the results.
+
+        A simple example:
+
+        ```c
+        #include <stdio.h>
+
+        int main()
+        {
+          printf("Hello, World!\n");
+          return 0;
+        }
+        ```
+
+        You can use the following library:
+
+        ```c
+        #include <stdatomic.h>
+        #include <stdatomic.h>
+        #include <stdlib.h>
+        #include <stdio.h>
+        #include <stdbool.h>
+        #include <stddef.h>
+        #include <string.h>
+        #include <stdint.h>
+        #include <math.h>
+        #include <openssl/ssl.h>
+        #include <openssl/rsa.h>
+        #include <openssl/x509.h>
+        #include <openssl/evp.h>
+        #include <openssl/sha.h>
+        #include <pthread.h>
+        #include <unistd.h>
+        ```
+      default_snippet: |
+        // You must define a `main()` function entry.
+        #include <stdio.h>
+
+        int main()
+        {
+        printf("Hello, World!\n");
+        return 0;
+        }
+    golang:
+      description: |
+        # Golang execution environment
+        We use the latest Golang environment, and your go code will be transferred to the environment provided by ShowMeBug.
+
+        You must define a package named `main` and implement the `main()` function, so that we can run the results.
+
+        A simple example:
+
+        ```golang
+        package main
+        import "fmt"
+
+        func main() {
+          fmt.Println("Hello, world")
+        }
+        ```
+      default_snippet: |
+        // Must define a package named `main` and implement the `main()` function.
+        package main
+        import "fmt"
+
+        func main() {
+          fmt.Println("Hello, world")
+        }
+    html:
+      description: |
+        # HTML/CSS/JS Environment Description
+        HTML/CSS/JS uses the browsed iframe for real-time rendering, where you can run HTML/CSS/JS code.
+        At the same time, we recommended that you open the debugger of the browser. If there is an error message, it can be output in real time.
+
+        This environment is a general front-end running environment. Of course, you can use it to examine the capabilities of front-end frameworks such as React, VueJS, and AngularJS, which are technically awesome.
+
+        ## React For example
+
+        ```html
+        <html>
+          <head>
+            <meta charset="UTF-8" />
+            <title>Hello World</title>
+            <script src="https://cdn.staticfile.org/react/16.8.6/umd/react.production.min.js"></script>
+            <script src="https://cdn.staticfile.org/react-dom/16.8.6/umd/react-dom.production.min.js"></script>
+            <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+          </head>
+          <body>
+            <div id="root"></div>
+            <script type="text/jsx">
+              ReactDOM.render(
+              <h1>Hello, React!</h1>,
+                document.getElementById('root')
+              );
+            </script>
+          </body>
+        </html>
+        ```
+        ## VueJS For example
+        ```html
+        <html>
+          <head>
+            <script src="https://cdn.staticfile.org/vue/2.6.10/vue.min.js"></script>
+            <style>
+              body {
+                color: white;
+                background-color: #1d2126;
+              }
+            </style>
+          </head>
+          <body>
+            <div id="app"><p>{{ message }}</p></div>
+            <script>
+              new Vue({
+                el: '#app',
+                data: {
+                  message: 'Hello World!',
+                },
+              })
+            </script>
+          </body>
+        </html>
+        ```
+    java:
+      description: |
+        # Java execution environment
+        We use the latest OpenJDK 14 environment, and your java code will be transferred to the environment provided by ShowMeBug.
+
+        You must define a `ShowMeBug` class and a `public static void main(String[] args)` method so that we can run the results.
+
+        A simple example:
+
+        ```java
+        public class ShowMeBug {
+          public static void main(String[] args) {
+            System.out.println("Hello World!");
+          }
+        }
+        ```
+
+        You can use the following library:
+
+        ```java
+        import java.io.*;
+        import java.util.*;
+        import java.math.*;
+        import java.util.regex.*;
+        import java.util.stream.*;
+        import java.text.*;
+        import java.security.SecureRandom;
+        import java.util.function.*;
+        import java.util.concurrent.*;
+        import com.fasterxml.jackson.core.*;
+        import com.fasterxml.jackson.core.type.*;
+        import com.fasterxml.jackson.databind.*;
+        ```
+      default_snippet: |
+        import java.util.*;
+
+        // Must define `ShowMeBug` entry class and `public static void main(String[] args)` entry method
+        public class ShowMeBug {
+          public static void main(String[] args) {
+            System.out.println("Hello World!");
+          }
+        }
+    javascript:
+      description: |
+        # JavaScript execution environment
+        JavaScript will be connected to the independent dedicated Node12.18.0 server provided by ShowMeBug to run. Here, it is convenient to investigate the ES5 and ES6 technical capabilities of candidates.
+
+        It can be understood as the result of executing `node xx.js` on the local computer.
+
+        For example:
+
+        ```javascript
+        class Person {
+          constructor(age) {
+            this.age = age
+          }
+
+          say() {
+            console.log(this.age)
+          }
+        }
+
+        const person = new Person(20)
+        // Console output: 20
+        person.say()
+        ```
+      default_snippet: |
+        for(let i=0; i<3; i++){
+          console.log('hello world')
+        }
+    mysql:
+      description: |
+        We use MySQL 8 as our MySQL execution environment.
+
+        MySQL uses a default database and default sample data. The database schema can be viewed in the "Database" column on the right side of our panel.
+
+        Before each execution of a database statement, we will re-create a brand new database. You can perform any table-level operations, including:
+
+        + Create and Insert Tables
+        + Create Constraint
+        + Insert data and query data
+
+        You can view the execution results of all query statements in the terminal output.
+
+        If you have any suggestions on the MySQL execution environment, please feel free to contact us.
+      default_snippet: |
+        /*
+          ShowMeBug provides a basic SQL sandbox, which contains the following data structure and some initial data.
+
+          developers                             projects
+          +---------------+---------+           +---------------+---------+
+          | id            | int     |<----+  +->| id            | int     |
+          | name          | varchar |     |  |  | name          | varchar |
+          | salary        | int     |     |  |  | start_date    | date    |
+          | department_id | int     |--+  |  |  | end_date      | date    |
+          +---------------+---------+  |  |  |  +---------------+---------+
+          |  |  |
+          |  |  |
+          departments                  |  |  |  developers_projects
+          +---------------+---------+  |  |  |  +---------------+---------+
+          | id            | int     |<-+  |  +--| project_id    | int     |
+          | name          | varchar |     +-----| developer_id  | int     |
+          +---------------+---------+           +---------------+---------+
+        */
+
+        SELECT * FROM developers;
+      init_db: |
+        CREATE TABLE `developers` (
+          id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+          name VARCHAR(255),
+          salary INT NULL,
+          department_id INT NULL
+        );
+        CREATE TABLE `departments` (
+          id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+          name VARCHAR(255)
+        );
+        CREATE TABLE `projects` (
+          id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+          name VARCHAR(255),
+          start_date DATE NULL,
+          end_date DATE NULL
+        );
+        CREATE TABLE `developers_projects` (
+          project_id INT,
+          developer_id INT
+        );
+
+        INSERT INTO `departments` (name) VALUES
+          ('Backend Team'),
+          ('Platform Team');
+        INSERT INTO `developers` (name, salary, department_id) VALUES
+          ('Develop A', 10, 1),
+          ('Develop B', 13, 2),
+          ('Develop C', 15, 1);
+        INSERT INTO `projects` (name, start_date, end_date) VALUES
+          ('Project One', '2002-01-01', '2002-02-01'),
+          ('Project Two', '2020-02-01', '2020-03-01'),
+          ('Project Three', '2021-01-01', null);
+        INSERT INTO `developers_projects` (project_id, developer_id) VALUES
+          (1, 1),
+          (1, 2),
+          (2, 2);
+    ruby:
+      description: |
+        # Ruby execution environment
+        We use the Ruby 2.7 environment, and your Ruby code will be transferred to the environment provided by ShowMeBug.
+
+        You can simply understand it's the results output after executing `ruby xx.rb` locally.
+
+        # Ruby test environment
+        Use %{testcase_framework}
+
+        A simple example:
+
+        ```ruby
+        3.times do
+          puts "hello world"
+        end
+        ```
+      default_snippet: |
+        3.times do
+          puts 'hello world'
+        end
+    objectivec:
+      description: |
+        # GCC execution environment
+        We use the Objective-C 2.0 runtime environment, and your Objective-C code will be sent to the environment provided by ShowMeBug.
+
+        You must define a `main()` function so that we can run the results.
+
+        A simple example:
+
+        ```objectivec
+        #import <Foundation/Foundation.h>
+
+        int main()
+        {
+          NSLog(@"Hello, World!");
+          return 0;
+        }
+        ```
+
+        Example of using interface:
+
+        ```objectivec
+
+        #import <Foundation/Foundation.h>
+
+        @interface SampleClass:NSObject
+        - (void)sampleMethod;
+        @end
+
+        @implementation SampleClass
+
+        - (void)sampleMethod{
+          NSLog(@"Hello, World!");
+        }
+
+        @end
+
+        int main()
+        {
+          SampleClass *sampleClass = [[SampleClass alloc]init];
+          [sampleClass sampleMethod];
+          return 0;
+        }
+        ```
+      default_snippet: |
+        // You must define a `main()` function entry.
+        #import <Foundation/Foundation.h>
+
+        int main()
+        {
+          NSLog(@"Hello, World!");
+          return 0;
+        }
+    php:
+      description: |
+        # PHP execution environment
+        We use the PHP 7.3 runtime environment, and your PHP code will be sent to the environment provided by ShowMeBug.
+
+        We will automatically pack into the following form:
+        ```php
+        <?php
+          { your-code }
+        ?>
+        ```
+
+        Please *do not add tags repeatedly*
+
+        A simple example:
+
+        ```php
+        for($i=0; $i<3; $i++){
+          echo "hello world\n";
+        }
+        ```
+      default_snippet: |
+        for($i=0; $i<3; $i++) {
+          echo "hello world\n";
+        }
+    python2:
+      description: |
+        # Python 2.7 execution environment
+        We use the Python 2.7 runtime environment, and your Python code will be sent to the environment provided by ShowMeBug.
+
+        You can simply understand it's the results output after executing `python2 xx.py` locally.
+
+        A simple example:
+
+        ```python
+        for i in range(3):
+          print 'hello world'
+        ```
+      default_snippet: |
+        for i in range(3):
+          print 'hello world'
+    python3:
+      description: |
+        # Python 3.8 execution environment
+        We use the Python 3.8 runtime environment, and your Python code will be sent to the environment provided by ShowMeBug.
+
+        At the same time, we also support what is needed in machine learning: numpy(1.15)、pandas(0.23)、sklearn(0.20)、scipy(1.0)
+
+        You can simply understand it's the results output after executing `python3 xx.py` locally.
+
+        A simple example:
+
+        ```python
+        for i in range(3):
+          print('hello world')
+        ```
+
+        Simple machine learning example:
+
+        ```python
+        import pandas
+        from sklearn import tree
+
+        # Here, the person’s height and whether he has a beard is used as (features), and gender is used as (labels).
+        features = [[178, 1], [155, 0], [177, 0], [165, 0], [169, 1], [160, 0]]
+        label = ['man', 'woman', 'man', 'woman', 'man', 'woman']
+
+        # Create a decision tree object clf
+        clf = tree.DecisionTreeClassifier()
+
+        # Give data to decision-making for judgment
+        clf = clf.fit(features, label)
+        print(clf.predict([[158, 0]]))
+        ```
+      default_snippet: |
+        for i in range(3):
+          print('hello world')
+    typescript:
+      description: |
+        # TypeScript execution environment
+        We use the TypeScript 4.0 environment. Your execution is first compiled and converted into JavaScript code by tsc, and then run by the node command.
+
+        A simple example:
+
+        ```typescript
+        function hello(str: string){
+          return str;
+        }
+
+        console.log(hello('Hello World'));
+        ```
+
+        Example of using class extensions:
+
+        ```typescript
+        class Sample {
+          fullStr: string;
+          constructor(public firstStr: string) {
+            this.fullStr = firstStr
+          }
+        }
+
+        interface Person {
+          firstStr: string;
+        }
+
+        function greeter(person: Person) {
+          return person.firstStr
+        }
+
+        let sample = new Sample("Hello World");
+        console.log(greeter(sample));
+        ```
+      default_snippet: |
+        function hello(str: string){
+          return str;
+        }
+
+        console.log(hello('Hello World'));
