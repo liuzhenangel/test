@@ -76,6 +76,16 @@ en:
         >
         > In-line formula: `$ x^{y^z}=(1+{\rm e}^x)^{-2xy^w} $`
       default_snippet: '## Please enter below (Markdown, insert formula and LaTex mathematical formula are supported, click the button "Environment Description" above to view details)'
+      interview_default_snippet: |
+        ## 题⽬模板
+
+        + Plain Text模式⽀持Markdown、插⼊公式，点击上⽅按钮“环境说明”查看详情，⽀持数学公式
+        + Plain Text模式下，⾯试者可以⾃由选择语⾔作答
+        + ⾯试时，点击左上⾓“运⾏”可以在右侧markdown可以渲染出内容
+        + ⽀持LaTeX公式，例如： `$ x^{y^z}=(1+{\\rm e}^x)^{-2xy^w} $`
+        + 更多帮助请查看“环境说明”
+      interview_default_answer: |
+        你的⾯试题答案或者参考代码
     board:
       description: |
         # Architecture Drawing Instructions
@@ -88,6 +98,7 @@ en:
 
         ## Questions
         You can fill in the content of your question on the sticky note by inserting the "sticky note" in the left side tool bar
+      readable_type: '架构绘图'
     bash:
       description: |
         # Bash execution environment
@@ -107,6 +118,14 @@ en:
         }
         func
         ```
+      interview_default_snippet: |
+        # 请你补下⾯的命令⾏内容
+        # 在命令⾏输出 "talk is cheap, show me the code"
+        echo "talk is cheap, show me the code"
+      interview_default_answer: |
+        补全字符即可，复制如下代码到编码区域即可运⾏：
+
+        echo "talk is cheap, show me the code"
     cclang:
       description: |
         # GCC execution environment
@@ -186,6 +205,48 @@ en:
           cout << "Hello, World!" << endl;
           return 0;
         }
+      interview_default_snippet: |
+        // 可以引⼊的库和版本相关请参考 “环境说明”
+        // 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+        #include <iostream>
+        #include <assert.h>
+
+        using namespace std;
+
+        // 如有必要请修改参数
+        int solution(int a, int b) {
+          // 在这⾥书写你的代码
+        }
+
+        // 请实现⼊⼝函数 `main()`
+        int main()
+        {
+          cout << "talk is cheap" << endl;
+          assert (solution(1, 2) == 3);
+          cout << "show me the code" << endl;
+          return 0;
+        }
+      interview_default_answer: |
+        评分标准：
+        题⽬能运⾏通过即为满分
+        补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        #include <iostream>
+        #include <assert.h>
+
+        using namespace std;
+
+        int solution(int a, int b) {
+          return a + b;
+        }
+
+        // 请实现⼊⼝函数 `main()`
+        int main()
+        {
+          assert (solution(1, 2) == 3);
+          cout << "succeed to execute, expected sum is: 3" << endl;
+          return 0;
+        }
     clang:
       description: |
         # GCC execution environment
@@ -236,6 +297,315 @@ en:
         printf("Hello, World!\n");
         return 0;
         }
+      interview_default_snippet: |
+        // 可以引⼊的库和版本相关请参考 “环境说明”
+        // 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+        #include <stdio.h>
+        #include <assert.h>
+
+        // 如有必要请修改参数
+        int solution(int a, int b)
+        {
+          // 在这⾥书写你的代码
+        }
+
+        // 请实现⼊⼝函数 `main()`
+        int main()
+        {
+          int sum = solution(1, 2);
+          assert (sum == 3);
+          printf("succeed to execute, expected sum is: %d\\n", 3);
+          return 0;
+        }
+      interview_default_answer: |
+        评分标准：
+        题⽬能运⾏通过即为满分
+        补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        #include <stdio.h>
+        #include <assert.h>
+
+        // 如有必要请修改参数
+        int solution(int a, int b)
+        {
+          return a + b;
+        }
+
+        // 请实现⼊⼝函数 `main()`
+        int main()
+        {
+          int sum = solution(1, 2);
+          assert (sum == 3);
+          printf("succeed to execute, expected sum is: %d\\n", 3);
+          return 0;
+        }
+      testcase_default_snippet: |
+        // 可以引⼊的库和版本相关请参考 “环境说明”
+        // 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+        #include <stdio.h>
+
+        // 如有必要请修改参数
+        int solution(int a, int b)
+        {
+          // 在这⾥书写你的代码
+        }
+      testcase_default_answer: |
+        // 可以引⼊的库和版本相关请参考 “环境说明”
+        // 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+        #include <stdio.h>
+
+        // 如有必要请修改参数
+        int solution(int a, int b)
+        {
+          return a + b;
+        }
+    coffeescript:
+      description: |
+        # CoffeeScript 执行环境
+        我们选用的是 CoffeeScript 1.7.1 环境，你的 CoffeeScript 代码会传送至 ShowMeBug 提供的该环境中。
+
+        可以简单理解在本地执行 `ShowMeBug.coffee` 后输出的结果。
+
+        一个简单的例子：
+
+        ```coffeescript
+        sayHello = ->
+          console.log 'Hello, World'
+
+        sayHello() for [1..3]
+        ```
+      interview_default_snippet: |
+        # 可以引⼊的库和版本相关请参考 “环境说明”
+        # 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+        # 如有必要请修改参数
+
+        solution = (a, b) ->
+          # 在这⾥书写你的代码
+
+        main = ->
+          console.assert(solution(1, 2) == 3, "failed to execute, expected sum is 3")
+          console.log("succeed to execute, expected sum is 3")
+
+        main()
+      interview_default_answer: |
+        评分标准：
+        题⽬能运⾏通过即为满分
+        补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        solution = (a, b) ->
+          return a + b
+
+        main = ->
+          console.assert(solution(1, 2) == 3, "failed to execute, expected sum is 3")
+          console.log("succeed to execute, expected sum is 3")
+
+        main()
+    csharp:
+      description: |
+        # C# 执行环境
+        我们选用的 C# 8 环境，你的 C# 代码会传送至 ShowMeBug 提供的该环境中。
+
+        你必须定义一个类和 `Main()` 函数，这样我们才能运行出结果。
+
+        一个简单的例子:
+
+        ```cs
+        using System;
+
+        public class ShowMeBug {
+          public static void Main() {
+            Console.WriteLine("Hello,World");
+          }
+        }
+        ```
+
+        你可以使用下面的库:
+
+        ```cs
+        using System;
+        using System.IO;
+        using System.CodeDom.Compiler;
+        using System.Collections;
+        using System.Collections.Generic;
+        using System.ComponentModel;
+        using System.Diagnostics.CodeAnalysis;
+        using System.Globalization;
+        using System.Reflection;
+        using System.Runtime.Serialization;
+        using System.Text;
+
+        using System.Text.RegularExpressions;
+        using System.Linq;
+        using System.Threading;
+
+        using MySql.Data.MySqlClient;
+        using Newtonsoft.Json;
+        ```
+      interview_default_snippet: |
+        // 可以引⼊的库和版本相关请参考 “环境说明”
+        // 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+
+        using System;
+        using System.Diagnostics;
+
+        public class ShowMeBug
+        {
+          class Solution
+          {
+            // 如有必要请修改参数
+            public int execute(int a, int b) {
+              // 在这⾥书写你的代码
+            }
+          }
+
+          public static void Main()
+          {
+            Solution s = new Solution();
+            Debug.Assert(s.execute(1, 2) == 3, "failed to execute ");
+            Console.WriteLine("succeed to execute, expected sum is 3");
+          }
+        }
+      interview_default_answer: |
+        评分标准：
+        题⽬能运⾏通过即为满分
+        补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        using System;
+        using System.Diagnostics;
+
+        public class ShowMeBug
+        {
+          class Solution
+          {
+            // 如有必要请修改参数
+            public int execute(int a, int b) {
+              // 在这⾥书写你的代码
+            }
+          }
+
+          public static void Main()
+          {
+            Solution s = new Solution();
+            Debug.Assert(s.execute(1, 2) == 3, "failed to execute ");
+            Console.WriteLine("succeed to execute, expected sum is 3");
+          }
+        }
+    dart:
+      description: |
+        # Dart 执行环境
+        我们选用的 Google/Dart 环境，你的 dart 代码会传送至 ShowMeBug 提供的该环境中。
+
+        一个简单的例子:
+
+        ```dart
+        // 你必须定义一个 main 函数，才能执行出结果。
+        void main() {
+          print('hello world');
+        }
+        ```
+      default_snippet: |
+        // 你必须定义一个 main 函数，才能执行出结果。
+        void main() {
+          print('hello world');
+        }
+      interview_default_snippet: |
+        // 可以引⼊的库和版本相关请参考 “环境说明”
+        // 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+        // 如有必要请修改参数
+
+        int solution(int a, int b) {
+          // 在这⾥书写你的代码
+        }
+
+        // 请实现⼊⼝函数 `main()`
+        void main() {
+          int ret = solution(1, 2);
+          if (ret == 3) {
+            print('succeed to execute, expected sum is 3');
+          } else {
+            print('failed to execute, expected sum is 3');
+          }
+        }
+      interview_default_answer: |
+        评分标准：
+        题⽬能运⾏通过即为满分
+        补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        int solution(int a, int b) {
+          return a + b;
+        }
+
+        // 请实现⼊⼝函数 `main()`
+        void main() {
+          int ret = solution(1, 2);
+          if (ret == 3) {
+            print('succeed to execute, expected sum is 3');
+          } else {
+            print('failed to execute, expected sum is 3');
+          }
+        }
+    elixir:
+      description: |
+        # Elixir 执行环境
+        我们选用的 Elixir 1.1.0 环境，你的 elixir 代码会传送至 ShowMeBug 提供的该环境中。
+
+        一个简单的例子:
+
+        ```elixir
+        defmodule Showmebug do
+          def sum(a, b) do
+            a + b
+          end
+        end
+
+        IO.puts Showmebug.sum(1, 2)
+        ```
+      interview_default_snippet: |
+        # 可以引⼊的库和版本相关请参考 “环境说明”
+        # 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+
+        defmodule ShowMeBug do
+          # 如有必要请修改参数
+          def solution(a, b) do
+            # 在这⾥书写你的代码
+          end
+        end
+
+        defmodule Main do
+          def entry() do
+            ret = ShowMeBug.solution(1, 2)
+            if ret == 3 do
+              "succeed to execute, expected sum is 3"
+            else
+              "failed to execute, expected sum is 3"
+            end
+          end
+        end
+
+        IO.puts Main.entry()
+      interview_default_answer: |
+        评分标准：
+        题⽬能运⾏通过即为满分
+        补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        defmodule ShowMeBug do
+          def solution(a, b) do
+            a + b
+          end
+        end
+
+        defmodule Main do
+          def entry() do
+            ret = ShowMeBug.solution(1, 2)
+            if ret == 3 do
+              "succeed to execute, expected sum is 3"
+            else
+              "failed to execute, expected sum is 3"
+            end
+          end
+        end
+
+        IO.puts Main.entry()
     golang:
       description: |
         # Golang execution environment
@@ -261,6 +631,125 @@ en:
         func main() {
           fmt.Println("Hello, world")
         }
+      interview_default_snippet: |
+        // 可以引⼊的库和版本相关请参考 “环境说明”
+        // 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+        // 必须定义⼀个包名为 `main` 的包
+
+        package main
+        import "fmt"
+
+        // 请按你的实际需求修改参数
+        func solution(a int, b int) int {
+          // 在这⾥书写你的代码
+        }
+
+        // 请实现⼊⼝函数 `main()`
+        func main() {
+          var ret = solution(1, 2);
+          if (ret == 3) {
+            fmt.Println("succeed to execute, expected result is 3, got \", ret)
+          } else {
+            fmt.Println("failed to execute, expected result is 3, got \", ret)
+          }
+        }
+      interview_default_answer: |
+        评分标准：
+        题⽬能运⾏通过即为满分
+        补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        package main
+        import "fmt"
+
+        func solution(a int, b int) int {
+          return a + b;
+        }
+
+        func main() {
+          var ret = solution(1, 2);
+          if (ret == 3) {
+            fmt.Println("succeed to execute, expected result is 3, got \", ret)
+          }else {
+            fmt.Println("failed to execute, expected result is 3, got \", ret)
+          }
+        }
+      testcase_default_snippet: |
+        // 可以引⼊的库和版本相关请参考 “环境说明”
+        // 必须定义⼀个 包名为 `main` 的包
+
+        package main
+
+        // 请按你的实际需求修改参数
+        func solution(a int, b int) int {
+          // 在这⾥写代码
+        }
+      testcase_default_answer: |
+        // solution 函数将会在测试⽤例被调⽤
+        // 必须定义⼀个 包名为 `main` 的包
+
+        package main
+
+        func solution(a int, b int) int {
+          return a + b
+        }
+      testcase_default_testcase_snippet: |
+        // 将使⽤ %{testcase_framework} 执⾏测试
+        // 必须定义⼀个 包名为 `main` 的包
+
+        package main
+
+        import (
+          . "github.com/onsi/ginkgo"
+          . "github.com/onsi/gomega"
+        )
+
+        var _ = Describe("solution", func() {
+          It("should 1 + 2 equals 3", func() {
+            Expect(solution(1, 2)).To(Equal(3))
+          })
+        })
+    haskell:
+      description: |
+        # Haskell 执行环境
+        我们选用的 Haskell 8 环境，你的 Haskell 代码会传送至 ShowMeBug 提供的该环境中。
+
+        可以简单理解在本地执行 `ShowMeBug.hs` 后输出的结果。
+
+        一个简单的例子:
+
+        ```haskell
+        main = putStrLn "Hello, World!"
+        ```
+      interview_default_snippet: |
+        -- 可以引⼊的库和版本相关请参考 “环境说明”
+        -- 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+        -- 请按你的实际需求修改参数
+
+        solution a b = do
+          -- 在这⾥书写你的代码
+
+        main = do
+          let ret = solution 1 2
+          case ret of
+            3 -> putStrLn
+              $ "succeed to execute, expected result is 3, got " ++ show ret
+            _ -> putStrLn
+              $ "failed to execute, expected result is 3, got " ++ show ret
+      interview_default_answer: |
+        评分标准：
+        题⽬能运⾏通过即为满分
+        补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        solution a b = do
+          a + b
+
+        main = do
+          let ret = solution 1 2
+          case ret of
+            3 -> putStrLn
+              $ "succeed to execute, expected result is 3, got " ++ show ret
+            _ -> putStrLn
+              $ "failed to execute, expected result is 3, got " ++ show ret
     html:
       description: |
         # HTML/CSS/JS Environment Description
@@ -316,6 +805,50 @@ en:
           </body>
         </html>
         ```
+      interview_default_snippet: |
+        <!-- 可以引⼊的库和版本相关请参考 “环境说明” -->
+        <!-- 请你下⾯HTML中的h1⽂字⽔平居中对⻬ -->
+        <!-- 显⽰效果可以在答题窗⼝的右侧预览 -->
+
+        <html>
+          <head>
+            <style>
+              h1 {
+                font-size: 30px;
+              }
+            </style>
+          </head>
+          <body>
+            <h1>Hello HTML/CSS/JS!</h1>
+            <script>
+              console.log('hello world!')
+            </script>
+          </body>
+        </html>
+      interview_default_answer: |
+        评分标准：
+        题⽬能运⾏通过即为满分
+        补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        <html>
+          <head>
+            <style>
+              h1 {
+                font-size: 30px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }
+            </style>
+          </head>
+          <body>
+            <h1>Hello HTML/CSS/JS!</h1>
+            <script>
+              console.log('hello world!')
+            </script>
+          </body>
+        </html>
     java:
       description: |
         # Java execution environment
@@ -358,6 +891,88 @@ en:
             System.out.println("Hello World!");
           }
         }
+      interview_default_snippet: |
+        // 可以引⼊的库和版本相关请参考 “环境说明”
+        // 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+        // `ShowMeBug` ⼊⼝类和 `public static void main(String[] args)` ⼊⼝⽅法请勿修改，以防执⾏失败
+
+        class Solution {
+          // 请按你的实际需求修改参数
+          public int solution(int a, int b) {
+            // 在这⾥书写你的代码
+          }
+        }
+
+        public class ShowMeBug {
+          public static void main(String[] args) {
+            Solution instance = new Solution();
+            int ret = instance.solution(1, 2);
+            if (ret == 3) {
+              System.out.printf("succeed to execute, expected result is 3, got %d", ret);
+            } else {
+              System.out.printf("failed to execute, expected result is 3, got %d", ret);
+            }
+          }
+        }
+      interview_default_answer: |
+        评分标准：
+        题⽬能运⾏通过即为满分
+        补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        class Solution {
+          public int solution(int a, int b) {
+            return a + b;
+          }
+        }
+
+        public class ShowMeBug {
+          public static void main(String[] args) {
+            Solution instance = new Solution();
+            int ret = instance.solution(1, 2);
+            if (ret == 3) {
+              System.out.printf("succeed to execute, expected result is 3, got %d", ret);
+            } else {
+              System.out.printf("failed to execute, expected result is 3, got %d", ret);
+            }
+          }
+        }
+      testcase_default_snippet: |
+        // 可以引⼊的库和版本相关请参考 “环境说明”
+        // 请勿更改 `ShowMeBug` 类名以防执⾏失败
+
+        public class ShowMeBug {
+          // 请按你的实际需求修改参数
+          public int solution(int a, int b) {
+            // 在这⾥写代码
+          }
+        }
+      testcase_default_answer: |
+        // 将会在测试⽤例被调⽤
+        // 请勿更改 `ShowMeBug` 类名以防执⾏失败
+
+        public class ShowMeBug {
+          public int solution(int a, int b) {
+            return a + b;
+          }
+        }
+      testcase_default_testcase_snippet: |
+        // 将使⽤ #{testcase_framework} 执⾏测试
+
+        import org.junit.jupiter.api.Test;
+        import org.junit.jupiter.api.DisplayName;
+        import static org.junit.jupiter.api.Assertions.assertEquals;
+
+        class ShowMeBugTest {
+          @Test
+          @DisplayName("test should solution return 3")
+          void testSolution() {
+            ShowMeBug showMeBug = new ShowMeBug();
+            assertEquals(
+              showMeBug.solution(1, 2),
+              3
+            );
+          }
+        }
     javascript:
       description: |
         # JavaScript execution environment
@@ -386,6 +1001,231 @@ en:
         for(let i=0; i<3; i++){
           console.log('hello world')
         }
+      interview_default_snippet: |
+        // 可以引⼊的库和版本相关请参考 “环境说明”
+        // 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+
+        let assert = require('assert');
+
+        // 请按你的实际需求修改参数
+        function solution(a, b) {
+          // 在这⾥书写你的代码
+        }
+
+        function main() {
+          let ret = solution(1, 2);
+          if (ret === 3) {
+            console.log('succeed to execute, expected sum is 3, got', ret);
+          } else {
+            console.log('failed to execute, expected sum is 3, got', ret);
+          }
+        }
+
+        main()
+      interview_default_answer: |
+        评分标准：
+        题⽬能运⾏通过即为满分
+        补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        let assert = require('assert');
+
+        function solution(a, b) {
+          return a + b;
+        }
+
+        function main() {
+          let ret = solution(1, 2);
+          if (ret === 3) {
+            console.log('succeed to execute, expected sum is 3, got', ret);
+          } else {
+            console.log('failed to execute, expected sum is 3, got', ret);
+          }
+        }
+
+        main()
+      testcase_default_snippet: |
+        // 可以引⼊的库和版本相关请参考 “环境说明”
+        // 可以使⽤ console.log("hello world") 输出信息到控制台
+
+        // 请按你的实际需求修改参数
+        function solution(a, b) {
+          // 在这⾥写代码
+        }
+
+        // 请勿删除，模块导出的函数才能被测试模块调⽤
+        module.exports = {
+          solution
+        }
+      testcase_default_answer: |
+        // 将会在测试⽤例被调⽤
+
+        function solution(a, b) {
+          return a + b;
+        }
+
+        // 请勿删除，模块导出的函数才能被测试模块调⽤
+        module.exports = {
+          solution
+        }
+      testcase_default_testcase_snippet: |
+        // 将使⽤ %{testcase_framework} 执⾏测试
+        const showMeBug = require("./showmebug");
+
+        describe('solution', () => {
+          test('adds 1 + 2 to equal 3', () => {
+            expect(showMeBug.solution(1, 2)).toBe(3)
+          });
+        })
+    kotlin:
+      description: |
+        # Kotlin 执行环境
+        我们选用 Kotlin 1.3.61 环境，你的执行先由 kotlinc 编译之后转换为 .jar 文件，最后由 java -jar 命令运行。
+
+        你必须定一个 main 函数，这样我们才能运行出结果。
+
+        最简单的 main 方法输出 Hello, World 举例:
+
+        ```kotlin
+        fun main(args: Array<String>) {
+          println("Hello, World")
+        }
+        ```
+
+        使用面向对象模式输出 Hello, World 举例:
+
+        ```kotlin
+        class ShowMebug(val name: String) {
+          fun greet() {
+            println("Hello, $name")
+          }
+        }
+
+        fun main(args: Array<String>) {
+          ShowMebug(args[0]).greet()
+        }
+        ```
+      default_snippet: |
+        // 你必须定义一个 main 函数，才能执行出结果。
+        fun main(args: Array<String>) {
+          println("Hello, World")
+        }
+      interview_default_snippet: |
+        // 可以引⼊的库和版本相关请参考 “环境说明”
+        // 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+        // 请按你的实际需求修改参数
+
+        fun solution(a: Int, b: Int): Int {
+          // 在这⾥书写你的代码
+        }
+
+        fun main(args: Array<String>) {
+          var ret = solution(1, 2)
+          if (ret == 3) {
+            println("succeed to execute, expected sum is 3, got \" + ret);
+          } else {
+            println("failed to execute, expected sum is 3, got \" + ret);
+          }
+        }
+      interview_default_answer: |
+        评分标准：
+        题⽬能运⾏通过即为满分
+        补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        fun solution(a: Int, b: Int): Int {
+          return a + b
+        }
+
+        fun main(args: Array) {
+          var ret = solution(1, 2)
+          if (ret == 3) {
+            println("succeed to execute, expected sum is 3, got \" + ret);
+          } else {
+            println("failed to execute, expected sum is 3, got \" + ret);
+          }
+        }
+    lua:
+      description: |
+        # Lua 执行环境
+        我们选用的 Lua 5.4.2 环境，你的 Lua 代码会传送至 ShowMeBug 提供的安装了 Lua 5.4.2 版本的环境，你可以方便考察技术牛人对 Lua 编程的理解。
+
+        可以简单理解在本地执行 `lua xx.lua` 后输出的结果。
+
+        # Lua 测试环境
+        使用 %{testcase_framework}
+
+        一个简单的例子:
+
+        ```lua
+          print("Hello World！")
+        ```
+      interview_default_snippet: |
+        -- 可以引⼊的库和版本相关请参考 “环境说明”
+        -- 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+
+        -- 如有必要请修改参数
+        function solution(a, b)
+          -- 在这⾥书写你的代码
+        end
+
+        function main()
+          local ret = solution(1, 2)
+          if ret == 3 then
+            print("succeed to execute, expected sum is 3, got", ret)
+          else
+            print("failed to execute, expected sum is 3, got", ret)
+          end
+        end
+
+        main()
+      interview_default_answer: |
+        -- 评分标准：
+        -- 题⽬能运⾏通过即为满分
+        -- 补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        function solution(a, b)
+          return a + b
+        end
+
+        function main()
+          local ret = solution(1, 2)
+          if ret == 3 then
+            print("succeed to execute, expected sum is 3, got", ret)
+          else
+            print("failed to execute, expected sum is 3, got", ret)
+          end
+        end
+
+        main()
+      testcase_default_snippet: |
+        -- 可以引⼊的库和版本相关请参考 “环境说明”
+
+        -- 请按你的实际需求修改参数
+        Module = {}
+
+        function Module:solution(a, b)
+          -- 在这⾥写代码
+        end
+
+        return Module
+      testcase_default_answer: |
+        -- 将会在测试⽤例被调⽤
+        Module = {}
+
+        function Module:solution(a, b)
+          return a + b
+        end
+
+        return Module
+      testcase_default_testcase_snippet: |
+        -- 将使⽤ %{testcase_framework} 执⾏测试
+        showmebug = require 'showmebug'
+        lu = require('luaunit')
+
+        function testSolution()
+          lu.assertEquals( showmebug:solution(1, 2), 3 )
+        end
+
+        os.exit( lu.LuaUnit.run() )
     mysql:
       description: |
         We use MySQL 8 as our MySQL execution environment.
@@ -459,6 +1299,26 @@ en:
           (1, 1),
           (1, 2),
           (2, 2);
+      interview_default_snippet: |
+        /*
+          下面可以执行您的查询语句，每次执行时数据都是初始状态。
+        */
+
+        SELECT * from developers;
+      interview_default_database_initdb: |
+        /*
+          答题中，候选人运行代码时，下面的语句将在候选人代码运行前自动执行以创建数据表结构和初始数据，候选人可以基于您创建的表结构和插入的数据执行查询语句。
+        */
+
+        CREATE TABLE `developers` (
+          id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+          name VARCHAR(255),
+          salary INT NULL
+        );
+        INSERT INTO `developers` (name, salary) VALUES
+          ('开发者一', 10),
+          ('开发者二', 13),
+          ('开发者三', 15);
     ruby:
       description: |
         # Ruby execution environment
@@ -480,6 +1340,299 @@ en:
         3.times do
           puts 'hello world'
         end
+      interview_default_snippet: |
+        # 可以引⼊的库和版本相关请参考 “环境说明”
+        # 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+
+        # 如有必要请修改参数
+        def solution(a, b)
+          # 在这⾥书写你的代码
+        end
+
+        def main()
+          ret = solution(1, 2)
+          if ret == 3
+            puts "succeed to execute, expected sum is 3, got \#{ret}"
+          else
+            puts "failed to execute, expected sum is 3, got #\{ret}"
+          end
+        end
+
+        main()
+      interview_default_answer: |
+        评分标准：
+        题⽬能运⾏通过即为满分
+        补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        def solution(a, b)
+          a + b
+        end
+
+        def main()
+          ret = solution(1, 2)
+          if ret == 3
+            puts "succeed to execute, expected sum is 3, got \#{ret}"
+          else
+            puts "failed to execute, expected sum is 3, got \#{ret}"
+          end
+        end
+
+        main()
+      testcase_default_snippet: |
+        # 可以引⼊的库和版本相关请参考 “环境说明”
+
+        # 请按你的实际需求修改参数
+        def solution(a, b)
+          # 在这⾥写代码
+        end
+      testcase_default_answer: |
+        # 将会在测试⽤例被调⽤
+
+        def solution(a, b)
+          a + b
+        end
+      testcase_default_testcase_snippet: |
+        # 将使⽤ %{testcase_framework} 执⾏测试
+
+        describe 'solution' do
+          it 'adds 1 + 2 to equal 3' do
+            expect(solution(1, 2)).to eq(3)
+          end
+        end
+    rust:
+      description: |
+        # Rust 执行环境
+        我们选用的 Rust 1.38.0 环境，你的 Rust 代码会传送至 ShowMeBug 提供的该环境中。
+
+        你必须定义一个 `main()` 函数，这样我们才能运行出结果。
+
+        mod和代码在同一个文件中举例：
+
+        ```rust
+        mod phrases {
+          pub mod greetings {
+            pub fn hello() {
+              println!("Hello, world!");
+            }
+          }
+        }
+        fn main() {
+          phrases::greetings::hello();
+        }
+        ```
+
+        使用use简化举例：
+
+        ```rust
+        mod phrases {
+          pub mod greetings {
+            pub fn hello() {
+              println!("Hello, world!");
+            }
+          }
+        }
+        use phrases::greetings::hello as greet;
+        fn main() {
+          greet();
+        }
+        ```
+      default_snippet: |
+        // 你必须定义一个 main 函数，才能执行出结果。
+        fn main() {
+          println!("Hello, world!");
+        }
+      interview_default_snippet: |
+        // 可以引⼊的库和版本相关请参考 “环境说明”
+        // 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+
+        // 如有必要请修改参数
+        fn solution(a: i32, b: i32) -> i32 {
+          // 在这⾥书写你的代码
+        }
+
+        // 请实现⼊⼝函数 `main()`
+        fn main() {
+          let ret = solution(1, 2);
+          if ret == 3 {
+            println!("succeed to execute, expected sum is 3, got {}\", ret);
+          } else {
+            println!("failed to execute, expected sum is 3, got {}\", ret);
+          }
+        }
+      interview_default_answer: |
+        评分标准：
+        题⽬能运⾏通过即为满分
+        补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        fn solution(a: i32, b: i32) -> i32 {
+          return a + b;
+        }
+
+        fn main() {
+          let ret = solution(1, 2);
+          if ret == 3 {
+            println!("succeed to execute, expected sum is 3, got {}\", ret);
+          } else {
+            println!("failed to execute, expected sum is 3, got {}\", ret);
+          }
+        }
+    scala:
+      description: |
+        # Scala 执行环境
+        我们选用 Scala 2.13.5 环境，你的 scala 代码会传送至 ShowMeBug 提供的该环境中。
+
+        你必须定义一个 ShowMeBug 对象并为其定义一个 main 方法，这样我们才能运行出结果。
+
+        一个简单的例子:
+
+        ```scala
+        object ShowMeBug {
+          def main(args: Array[String]) = {
+            println("Hello, world!")
+          }
+        }
+        ```
+
+        特征(接口)声明方法:
+
+        ```scala
+        trait World {
+          def printStr(str : String)
+        }
+
+        class Hello extends World {
+          def printStr(str : String): Unit = {
+            println("Hello " + str)
+          }
+        }
+
+        object ShowMeBug {
+          def main(args: Array[String]) {
+            val h1 = new Hello()
+            h1.printStr("World")
+          }
+        }
+        ```
+      default_snippet: |
+        // 你必须定义一个 ShowMeBug 对象并为其定义一个 main 方法：
+        object ShowMeBug {
+          def main(args: Array[String]) = {
+            println("Hello, world!")
+          }
+        }
+      interview_default_snippet: |
+        // 可以引⼊的库和版本相关请参考 “环境说明”
+        // 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+        // 请定义⼀个 ShowMeBug 对象并为其实现⼀个 main ⽅法作为⼊⼝函数，否则⽆法正确执⾏
+
+        object ShowMeBug {
+          // 如有必要请修改参数
+          def solution(x: Int, y: Int): Int = {
+            // 在这⾥书写你的代码
+          }
+
+          def main(args: Array[String]) {
+            val ret = this.solution(1, 2)
+            if (ret == 3)
+            println(f"succeed to execute, expected sum is 3, got ${ret}\")
+            else
+            println(f"failed to execute, expected sum is 3, got ${ret}\")
+          }
+        }
+      interview_default_answer: |
+        评分标准：
+        题⽬能运⾏通过即为满分
+        补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        object ShowMeBug {
+          def solution(x: Int, y: Int): Int = {
+            x + y
+          }
+
+          def main(args: Array[String]) {
+            val ret = this.solution(1, 2)
+            if (ret == 3)
+            println(f"succeed to execute, expected sum is 3, got ${ret}\")
+            else
+            println(f"failed to execute, expected sum is 3, got ${ret}\")
+          }
+        }
+    swift:
+      description: |
+        # Swift 执行环境
+        我们选用的 Swift 5.2 环境，你的 Swift 代码会传送至 ShowMeBug 提供的该环境中。
+
+        可以简单理解在本地执行 `ShowMeBug.swift` 后输出的结果。
+
+        一个简单的例子:
+
+        ```Swift
+        import Foundation
+
+        for _ in 1...5 {
+          print("Hello, World!")
+        }
+        ```
+
+        简单的接口类与实现类例子:
+
+        ```Swift
+        protocol Student{
+          func sayHello()
+        }
+        class Persion:Student{
+          var _name:String
+          init(name:String) {
+            self._name = name
+          }
+          func sayHello() {
+            print("\\(self._name), Hello")
+          }
+        }
+        var per = Persion(name: "张三")
+        per.sayHello()
+        ```
+      interview_default_snippet: |
+        // 可以引⼊的库和版本相关请参考 “环境说明”
+        // 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+        import Foundation
+
+        // 如有必要请修改参数
+        func solution(a: Int, b: Int) -> Int {
+          // 在这⾥书写你的代码
+        }
+
+        func main() {
+          let ret = solution(a: 1, b: 2)
+          if (ret == 3) {
+            print("succeed to execute, expected sum is 3, got \\(ret)")
+          } else {
+            print("failed to execute, expected sum is 3, got \\(ret)")
+          }
+        }
+
+        main()
+      interview_default_answer: |
+        评分标准：
+        题⽬能运⾏通过即为满分
+        补全后的⽰例代码如下, 复制到编码区域即可运⾏
+        import Foundation
+
+        // 如有必要请修改参数
+        func solution(a: Int, b: Int) -> Int {
+          return a + b
+        }
+
+        func main() {
+          let ret = solution(a: 1, b: 2)
+          if (ret == 3) {
+            print("succeed to execute, expected sum is 3, got \\(ret)")
+          } else {
+            print("failed to execute, expected sum is 3, got \\(ret)")
+          }
+        }
+
+        main()
     objectivec:
       description: |
         # GCC execution environment
@@ -533,6 +1686,180 @@ en:
           NSLog(@"Hello, World!");
           return 0;
         }
+      interview_default_snippet: |
+        // 可以引⼊的库和版本相关请参考 “环境说明”
+        // 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+
+        #import <Foundation/Foundation.h>
+
+        // 如有必要请修改参数
+        int solution(int a, int b) {
+          // 在这⾥书写你的代码
+        }
+
+        // 请实现⼊⼝函数 `main()`
+        int main()
+        {
+          int ret;
+          ret = solution(1, 2);
+          if (ret == 3) {
+            NSLog(@"succeed to execute, expected sum is 3, got %@\", ret);
+          } else {
+            NSLog(@"failed to execute, expected sum is 3, got %@\", ret);
+          }
+          return 0;
+        }
+      interview_default_answer: |
+        评分标准：
+        题⽬能运⾏通过即为满分
+        补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        #import <Foundation/Foundation.h>
+
+        int solution(int a, int b) {
+          return a + b;
+        }
+
+        int main()
+        {
+          int ret;
+          ret = solution(1, 2);
+          if (ret == 3) {
+            NSLog(@"succeed to execute, expected sum is 3, got %@\", ret);
+          } else {
+            NSLog(@"failed to execute, expected sum is 3, got %@\", ret);
+          }
+          return 0;
+        }
+    ocaml:
+      description: |
+        # OCaml 执行环境
+        我们选用的 OCaml 4.02.3 环境，你的 ocaml 代码会传送至 ShowMeBug 提供的该环境中。
+
+        一个简单的例子:
+
+        ```ocaml
+        let mult = fun x y -> x + y;;
+        let mult_4 = mult 4;;
+        let i = mult_4 5;;
+        print_int i
+        ```
+      default_snippet_sample: |
+        open Printf
+
+        let bubblesort lst =
+          (* write your code here *)
+          lst (*需删除*)
+        let array = bubblesort [5; 2; 1; 1; 3; 6; 4];;
+        let () = List.iter (printf"%d") array
+      interview_default_snippet: |
+        (* 可以引⼊的库和版本相关请参考 “环境说明” *)
+        (* 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏ *)
+        (* 如有必要请修改参数 *)
+
+        let add param1 param2 = (* 在这⾥书写你的代码 *)
+
+        let result = add 1 2;;
+        if result = 3 then
+          Printf.printf ("succeed to execute, expected sum is 3, got %d") result
+        else
+          Printf.printf ("failed to execute, expected sum is 3, got %d") result;
+      interview_default_answer: |
+        评分标准：
+        题⽬能运⾏通过即为满分
+        补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        let add param1 param2 = param1 + param2;;
+
+        let result = add 1 2;;
+        if result = 3 then
+          Printf.printf ("succeed to execute, expected sum is 3, got %d") result
+        else
+          Printf.printf ("failed to execute, expected sum is 3, got %d") result;
+    perl:
+      description: |
+        # perl 执行环境
+        我们选用的 Perl 5.22.1 环境，你的 Perl 代码会传送至 ShowMeBug 提供的该环境中。
+
+        可以简单理解在本地执行 `ShowMeBug.pl` 后输出的结果。
+
+        你可以使用下面的库:
+
+        ```Perl
+        use strict;
+        use warnings;
+        use JSON;
+        use Data::Dumper;
+        ```
+
+        一个简单的例子:
+
+        ```Perl
+        use strict;
+        use warnings;
+        use Data::Dumper;
+
+        for(my $i = 1; $i < 3; $i += 1 ) {
+          print "Hello, World: $i\\n";
+        }
+        ```
+
+        简单的方法调用例子:
+
+        ```Perl
+        sub HelloWorld{
+          print "Hello, World : $_[0]\\n";
+        }
+
+        HelloWorld('张三');
+        ```
+      interview_default_snippet: |
+        # 可以引⼊的库和版本相关请参考 “环境说明”
+        # 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+
+        use strict;
+        use warnings;
+        use Data::Dumper;
+        sub solution {
+          # 如有必要请修改参数
+          my ($a, $b) = @_;\
+          # 在这⾥书写你的代码
+        }
+
+        sub main {
+          my $ret = solution(1, 2);
+          if ($ret eq 3) {
+            print "succeed to execute, expected sum is 3, got ", $ret;
+          } else {
+            print "failed to execute, expected sum is 3, got ", $ret;
+          }
+        }
+
+        main();
+      interview_default_answer: |
+        评分标准：
+        题⽬能运⾏通过即为满分
+        补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        use strict;
+        use warnings;
+        use Data::Dumper;
+
+        sub solution {
+          my ($a, $b) = @_;\
+          return $a + $b;
+        }
+
+        sub main {
+          my $ret = solution(1, 2);
+          if ($ret eq 3) {
+            print "succeed to execute, expected sum is 3, got ", $ret;
+          } else {
+            print "failed to execute, expected sum is 3, got ", $ret;
+          }
+        }
+
+        main();
     php:
       description: |
         # PHP execution environment
@@ -558,6 +1885,73 @@ en:
         for($i=0; $i<3; $i++) {
           echo "hello world\n";
         }
+      interview_default_snippet: |
+        // 可以引⼊的库和版本相关请参考 “环境说明”
+        // 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+        // 如有必要请修改参数
+
+        function solution($a, $b) {
+          // 在这⾥书写你的代码
+        }
+
+        function main() {
+          $ret = solution(1, 2);
+          if ($ret == 3) {
+            echo "succeed to execute, expected sum is 3, got $ret";
+          } else {
+            echo "failed to execute, expected sum is 3, got $ret";
+          }
+        }
+
+        main();
+      interview_default_answer: |
+        评分标准：
+        题⽬能运⾏通过即为满分
+        补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        function solution($a, $b) {
+          return $a + $b;
+        }
+
+        function main() {
+          $ret = solution(1, 2);
+          if ($ret == 3) {
+            echo "succeed to execute, expected sum is 3, got $ret";
+          } else {
+            echo "failed to execute, expected sum is 3, got $ret";
+          }
+        }
+
+        main();
+      testcase_default_snippet: |
+        // 可以引⼊的库和版本相关请参考 “环境说明”
+
+        // 请按你的实际需求修改参数
+        function solution($a, $b) {
+          // 在这⾥写代码
+        }
+      testcase_default_answer: |
+        // 将会在测试⽤例被调⽤
+
+        function solution($a, $b) {
+          return $a + $b;
+        }
+      testcase_default_testcase_snippet: |
+        // 将使⽤ %{testcase_framework} 执⾏测试
+        // 请保留以下两⾏代码以引⼊必要依赖
+
+        use PHPUnit\\Framework\\TestCase;
+
+        require "./showmebug.php";
+
+        class ShowMeBugTest extends TestCase
+        {
+          // 测试⽅法必须⽤ `test` 开头
+          public function testSolution()
+          {
+            $this->assertEquals(solution(1, 2), 3);
+          }
+        }
     python2:
       description: |
         # Python 2.7 execution environment
@@ -574,6 +1968,58 @@ en:
       default_snippet: |
         for i in range(3):
           print 'hello world'
+      interview_default_snippet: |
+        # -*- coding: utf-8 -*-
+        # 可以引⼊的库和版本相关请参考 “环境说明”
+        # 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+        # 请按你的实际需求修改参数
+
+        def solution(a, b):
+          # 在这⾥写代码
+
+        def main():
+          ret = solution(1, 2)
+          assert ret == 3, "failed to execute, expected sum is 3, got %s" % ret
+          print("succeed to execute, expected sum is 3, got %s" % ret)
+
+        if __name__ == "__main__":
+          main()
+      interview_default_answer: |
+        评分标准：
+        题⽬能运⾏通过即为满分
+        补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        def solution(a, b):
+          return a + b;
+
+        def main():
+          ret = solution(1, 2)
+          assert ret == 3, "failed to execute, expected sum is 3, got %s" % ret
+          print("succeed to execute, expected sum is 3, got %s" % ret)
+
+        if __name__ == "__main__":
+          main()
+      testcase_default_snippet: |
+        # -*- coding: utf-8 -*-
+        # 可以引⼊的库和版本相关请参考 “环境说明”
+
+        # 请按你的实际需求修改参数
+        def solution(a, b):
+          # 在这⾥写代码
+      testcase_default_answer: |
+        # -*- coding: utf-8 -*-
+        # 将会在测试⽤例被调⽤
+
+        def solution(a, b):
+          return a + b
+      testcase_default_testcase_snippet: |
+        # -*- coding: utf-8 -*-
+        # 将使⽤ %{testcase_framework} 执⾏测试
+        # import pytest
+        from showmebug import solution
+
+        def test_solution():
+          assert solution(1, 2) == 3
     python3:
       description: |
         # Python 3.8 execution environment
@@ -610,6 +2056,121 @@ en:
       default_snippet: |
         for i in range(3):
           print('hello world')
+      interview_default_snippet: |
+        # 可以引⼊的库和版本相关请参考 “环境说明”
+        # 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+        # 请按你的实际需求修改参数
+
+        def solution(a, b):
+          # 在这⾥写代码
+
+        def main():
+          ret = solution(1, 2)
+          assert ret == 3, "failed to execute, expected sum is 3, got %s" % ret
+          print("succeed to execute, expected sum is 3, got %s" % ret)
+
+        if __name__ == "__main__":
+          main()
+      interview_default_answer: |
+        评分标准：
+        题⽬能运⾏通过即为满分
+        补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        def solution(a, b):
+          return a + b;
+
+        def main():
+          ret = solution(1, 2)
+          assert ret == 3, "failed to execute, expected sum is 3, got %s" % ret
+          print("succeed to execute, expected sum is 3, got %s" % ret)
+
+        if __name__ == "__main__":
+          main()
+      testcase_default_snippet: |
+        # 可以引⼊的库和版本相关请参考 “环境说明”
+        # 请按你的实际需求修改参数
+        def solution(a, b):
+          # 在这⾥写代码
+      testcase_default_answer: |
+        # 将会在测试⽤例被调⽤
+        def solution(a, b):
+          return a + b
+      testcase_default_testcase_snippet: |
+        # 将使⽤ %{testcase_framework} 执⾏测试
+        # import pytest
+        from showmebug import solution
+
+        def test_solution():
+          assert solution(1, 2) == 3
+    r:
+      description: |
+        # R 执行环境
+        我们选用的 Rscript 4.0.3 环境，你的 R 代码会传送至 ShowMeBug 提供的该环境中。
+
+        可以简单理解在本地执行 `ShowMeBug.R` 后输出的结果。
+
+        你可以使用下面的库:
+
+        ```R
+        library(jsonlite)
+        library(stringr)
+        ```
+
+        一个简单的例子:
+
+        ```R
+        for(i in 1:3) {
+          message("Hello, World")
+        }
+        ```
+
+        简单的方法调用例子:
+
+        ```R
+        plus <- function(x){
+          function(y) x+y
+          message("Hello, World")
+        }
+        plus_one <- plus(3)
+        ```
+      interview_default_snippet: |
+        # 可以引⼊的库和版本相关请参考 “环境说明”
+        # 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+
+        # 如有必要请修改参数
+        solution <- function(a, b) {
+          # 在这⾥书写你的代码
+        }
+
+        main <- function() {
+          ret = solution(1, 2)
+          if (ret == 3) {
+            print(paste("succeed to execute, expected sum is 3, got", ret))
+          } else {
+            print(paste("failed to execute, expected sum is 3, got", ret))
+          }
+        }
+
+        main();
+      interview_default_answer: |
+        评分标准：
+        题⽬能运⾏通过即为满分
+        补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        solution <- function(a, b) {
+          return(a + b)
+        }
+
+        main <- function() {
+          ret = solution(1, 2)
+          if (ret == 3) {
+            print(paste("succeed to execute, expected sum is 3, got", ret))
+          } else {
+            print(paste("failed to execute, expected sum is 3, got", ret))
+          }
+        }
+
+        main();
     typescript:
       description: |
         # TypeScript execution environment
@@ -652,3 +2213,319 @@ en:
         }
 
         console.log(hello('Hello World'));
+      interview_default_snippet: |
+        // 可以引⼊的库和版本相关请参考 “环境说明”
+        // 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+
+        // 如有必要请修改参数
+        function solution(a: number, b: number) {
+          // 在这⾥书写你的代码
+        }
+
+        function main() {
+          let ret = solution(1, 2);
+          if (ret === 3) {
+            console.log(`succeed to execute, expected sum is 3, got ${ret}`)
+          } else {
+            console.log(`failed to execute, expected sum is 3, got ${ret}`)
+          }
+        }
+
+        main();
+      interview_default_answer: |
+        评分标准：
+        题⽬能运⾏通过即为满分
+        补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        function solution(a: number, b: number) {
+          return a + b;
+        }
+
+        function main() {
+          let ret = solution(1, 2);
+          if (ret === 3) {
+            console.log(`succeed to execute, expected sum is 3, got ${ret}`)
+          } else {
+            console.log(`failed to execute, expected sum is 3, got ${ret}`)
+          }
+        }
+
+        main();
+
+    visual_basic:
+      description: |
+        # Visual Basic 执行环境
+        我们选用的 Visual Basic 16.0 环境，你的 Visual Basic 代码会传送至 ShowMeBug 提供的该环境中。
+
+        可以简单理解在本地执行 `ShowMeBug.vb` 后，执行编译好的可执行文件后输出的结果。
+
+        你必须必须定义一个 `Sub Main` 方法在顶层模型，这样我们才能运行出结果。
+
+        一个简单的例子:
+
+        ```vb
+        ' 必须定义一个 `Sub Main` 方法在顶层模型
+        Module ShowMeBug
+          Sub Main()
+            Console.WriteLine ("Hello, World")
+          End Sub
+        End Module
+        ```
+
+        你可以使用下面的库:
+
+        ```vb
+        Imports System
+        Imports System.IO
+        Imports System.CodeDom.Compiler
+        Imports System.Collections
+        Imports System.Collections.Generic
+        Imports System.ComponentModel
+        Imports System.Diagnostics.CodeAnalysis
+        Imports System.Globalization
+        Imports System.Reflection
+        Imports System.Runtime.Serialization
+        Imports System.Text
+        Imports System.Text.RegularExpressions
+        Imports System.Linq
+        Imports Newtonsoft.Json
+        ```
+        实现一个 Rectangle 类，它具有长度和宽度等属性。 根据设计，它可能需要接受这些属性的值，计算面积和显示细节的方式。
+
+        ```vb
+        Imports System
+        Public Class Rectangle
+          Private length As Double
+          Private width As Double
+
+          'Public methods
+          Public Sub AcceptDetails()
+            length = 4.5
+            width = 3.5
+          End Sub
+
+          Public Function GetArea() As Double
+            GetArea = length * width
+          End Function
+          Public Sub Display()
+            Console.WriteLine("Length: {0}\", length)
+            Console.WriteLine("Width: {0}\", width)
+            Console.WriteLine("Area: {0}\", GetArea())
+          End Sub
+
+          Shared Sub Main()
+            Dim r As New Rectangle()
+            r.Acceptdetails()
+            r.Display()
+            Console.ReadLine()
+          End Sub
+        End Class
+        ```
+      default_snippet: |
+        \' 必须定义一个 `Sub Main` 方法在顶层模型
+        Module ShowMeBug
+          Sub Main()
+            Console.WriteLine ("Hello, World")
+          End Sub
+        End Module
+      interview_default_snippet: |
+        \' 可以引⼊的库和版本相关请参考 “环境说明”
+        \' 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+
+        \' 请定义⼊⼝⽅法 `Sub Main` 在顶层模型
+        Module ShowMeBug
+          \' 如有必要请修改参数
+          Function Solution(a, b)
+            \' 在这⾥书写你的代码
+          End Function
+
+          Sub Main()
+            Dim ret As Integer = Solution(1, 2)
+            If ret = 3 Then
+              Console.WriteLine("succeed to execute, expected sum is 3, got \" + ret.ToString())
+            Else
+              Console.WriteLine("failed to execute, expected sum is 3, got \" + ret.ToString())
+            End If
+          End Sub
+        End Module
+      interview_default_answer: |
+        评分标准：
+        题⽬能运⾏通过即为满分
+        补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        Module ShowMeBug
+          Function Solution(a, b)
+            Return a + b
+          End Function
+          Sub Main()
+            Dim ret As Integer = Solution(1, 2)
+            If ret = 3 Then
+              Console.WriteLine("succeed to execute, expected sum is 3, got \" + ret.ToString())
+            Else
+              Console.WriteLine("failed to execute, expected sum is 3, got \" + ret.ToString())
+            End If
+          End Sub
+        End Module
+    verilog:
+      description: |
+        # Verilog 执行环境
+        我们选用的 iverilog 0.9.7 环境，你的 verilog 代码会传送至 ShowMeBug 提供的该环境中。
+
+        一个简单的例子:
+
+        ```verilog
+        module hello;
+          initial
+            begin
+              $display("Hello World!");
+              $finish;
+            end
+        endmodule
+        ```
+      interview_default_snippet: |
+        // 可以引⼊的库和版本相关请参考 “环境说明”
+        // 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+
+        module solution(out, a, b);
+          // 在这⾥书写你的代码
+        endmodule
+
+        module test;
+          reg [31:0] a = 5;
+          reg [31:0] b = 3;
+
+          wire [31:0] value;
+          solution c1 (value, a, b);
+
+          initial
+            if (value == 8)
+            begin
+              $display("succeed to execute, expected sum is: %0d", value);
+              $finish;
+            end
+        endmodule
+      interview_default_answer: |
+        评分标准：
+        题⽬能运⾏通过即为满分
+        补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        module solution(out, a, b);
+          input [31:0] a, b;
+          output [31:0] out;
+
+          assign out = a + b;
+        endmodule
+
+        module test;
+          reg [31:0] a = 5;
+          reg [31:0] b = 3;
+
+          wire [31:0] value;
+          solution c1 (value, a, b);
+
+          initial
+            if (value == 8)
+            begin
+              $display("succeed to execute, expected sum is: %0d", value);
+              $finish;
+            end
+        endmodule
+    vhdl:
+      description: |
+        # VHDL 执行环境
+        我们选用的 GHDL 0.36 环境，你的 VHDL 代码会传送至 ShowMeBug 提供的该环境中。
+
+        一个简单的例子:
+
+        ```VHDL
+        --  Hello world 程序示例.
+        use std.textio.all;
+
+        entity hello_world is
+        end hello_world;
+
+        architecture behaviour of hello_world is
+        begin
+          process
+              variable l : line;
+          begin
+              write (l, String'("Hello world!"));
+              writeline (output, l);
+              wait;
+          end process;
+        end behaviour;
+        ```
+      interview_default_snippet: |
+        -- 可以引⼊的库和版本相关请参考 “环境说明”
+        -- 请你补全下⾯的代码，输出两数之和，使下⾯的代码能正确运⾏
+
+        use std.textio.all;
+
+        entity sum_solution is
+        end sum_solution;
+
+        architecture behaviour of sum_solution is
+          -- 请修改下面的方法，包括主流程和声明的返回值，并且去除默认返回值
+          function Solution(A : integer; B : integer) return integer is
+          begin
+            null;
+          end function;
+
+        begin
+          process
+            variable s : line;
+            variable ret : integer:=0;
+          begin
+            ret := Solution(A => 1, B => 2);
+
+            if ret = 3 then
+              write(s, String'("succeed to execute, expected sum is 3, got:"));
+              write(s, ret);
+            else
+              write(s, String'("failed to execute, expected sum is 3, got:"));
+              write(s, ret);
+            end if;
+
+            writeline (output, s);
+            wait;
+          end process;
+        end behaviour;
+      interview_default_answer: |
+        -- 评分标准：
+        -- 题⽬能运⾏通过即为满分
+        -- 补全后的⽰例代码如下, 复制到编码区域即可运⾏
+
+        use std.textio.all; --  Imports the standard textio package.
+
+        entity sum_solution is
+        end sum_solution;
+
+        architecture behaviour of sum_solution is
+          -- 计算两数之和
+          function Solution(A : integer := 0;
+                            B : integer := 0) return integer is
+            variable Total : integer;
+          begin
+            Total := A + B;
+            return Total;
+          end function;
+
+        begin
+          process
+            variable s : line;
+            variable ret : integer:=0;
+          begin
+            ret := Solution(A => 1, B => 2);
+
+            if ret = 3 then
+              write(s, String'("succeed to execute, expected sum is 3, got:"));
+              write(s, ret);
+            else
+              write(s, String'("failed to execute, expected sum is 3, got:"));
+              write(s, ret);
+            end if;
+
+            writeline (output, s);
+            wait;
+          end process;
+        end behaviour;
